@@ -1,7 +1,7 @@
-bing = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US"
+bing = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=7&mkt=en-US"
 flickrApiKey = "your-flickr-api-key"
 flickr = "https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key="+flickrApiKey+"&per_page=20&format=json&extras=url_o"
-mattcooper = "https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&api_key="+flickrApiKey+"&user_id=thetimethespace&per_page=1&format=json&extras=url_o"
+mattcooper = "https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&api_key="+flickrApiKey+"&user_id=thetimethespace&per_page=20&format=json&extras=url_o"
 reddit = "https://www.reddit.com/r/EarthPorn+unitedstatesofamerica/.json?limit=50"
 natgeo = "https://www.nationalgeographic.com/photography/photo-of-the-day/_jcr_content/.gallery.json"
 
@@ -60,10 +60,7 @@ update: (output, domEl) ->
     console.log(jsonData)
 
   if srcUrl.match(/flickr/i)
-    if srcUrl.match(/thetimethespace/i)
-      index = 0
-    else
-      index = Math.floor(Math.random() * 20)
+    index = Math.floor(Math.random() * 20)
     photoid = jsonData.photos.photo[index].id
     farmid = jsonData.photos.photo[index].farm
     serverid = jsonData.photos.photo[index].server
@@ -72,8 +69,9 @@ update: (output, domEl) ->
     url = "https://farm" + farmid + ".staticflickr.com/" + serverid + "/" + photoid + "_" + secretid + "_h.jpg"
 
   if srcUrl.match(/bing/i)
-    title = jsonData.images[0].copyright
-    url = "http://www.bing.com" + jsonData.images[0].url
+    index = Math.floor(Math.random() * 7)
+    title = jsonData.images[index].copyright
+    url = "http://www.bing.com" + jsonData.images[index].url
 
   if srcUrl.match(/reddit/i)
     index = Math.floor(Math.random() * 50)
