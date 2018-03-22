@@ -23,8 +23,8 @@ and once the key is generated enter it into the flickrApiKey line.
 you wish to retrieve the picture from.
 3. Optionally change the refresh interval from 1 hour to your desired setting.
 
-###
-Note that each source randomly selects and image from a pre-defined max number of images that the
+### Note
+Each source randomly selects and image from a pre-defined max number of images that the
 source provides. For example:
 * flickr and mattcooper retrieve only the last 20 images
 * bing only provides the last 7 images in json format
