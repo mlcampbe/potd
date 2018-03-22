@@ -1,12 +1,11 @@
-# be sure to replace apiKey with a correct value for the flicr and mattcooper URLs
+bing = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US"
+flickrApiKey = "your-flickr-api-key"
+flickr = "https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key="+flickrApiKey+"&per_page=20&format=json&extras=url_o"
+mattcooper = "https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&api_key="+flickrApiKey+"&user_id=thetimethespace&per_page=1&format=json&extras=url_o"
+reddit = "https://www.reddit.com/r/EarthPorn+unitedstatesofamerica/.json?limit=50"
+natgeo = "https://www.nationalgeographic.com/photography/photo-of-the-day/_jcr_content/.gallery.json"
 
-# bing = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US"
-# flickr = "https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=apiKey0&per_page=20&format=json&extras=url_o"
-# reddit = "https://www.reddit.com/r/EarthPorn+unitedstatesofamerica/.json?limit=50"
-# mattcooper = "https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&api_key=apiKey&user_id=thetimethespace&per_page=1&format=json&extras=url_o"
-# natgeo = "https://www.nationalgeographic.com/photography/photo-of-the-day/_jcr_content/.gallery.json"
-
-srcUrl = "https://www.reddit.com/r/EarthPorn+unitedstatesofamerica/.json?limit=50"
+srcUrl = reddit
 userAgent = "User-AgentMozilla/5.0 Gecko/20100101 Firefox/29.0"
 debug = 0
 
