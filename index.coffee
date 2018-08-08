@@ -105,13 +105,13 @@ update: (output, domEl) ->
     $div.append $shadow
     $descr = $('<div class="descr" />')
     now = new Date
-    hours = now.getHours()
     ampm = if now.getHours() < 12 then 'a' else 'p'
+    hours = if now.getHours() > 12 then now.getHours()-12 else now.getHours()
     minutes = if now.getMinutes() < 10 then '0'+now.getMinutes() else now.getMinutes()
     if title
-      $descr.html title + " | " + now.getHours()%12 + ":" + minutes + ampm
+      $descr.html title + " | " + hours + ":" + minutes + ampm
     else
-      $descr.html now.getHours()%12 + ":" + minutes + ampm
+      $descr.html hours + ":" + minutes + ampm
     $div.append $descr
     $domEl.append $div
   img.src = url
