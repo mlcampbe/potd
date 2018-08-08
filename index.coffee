@@ -106,14 +106,12 @@ update: (output, domEl) ->
     $descr = $('<div class="descr" />')
     now = new Date
     hours = now.getHours()
-    if hours >= 12
-      ampm = 'p'
-    else
-      ampm = 'a'
+    ampm = if now.getHours() < 12 then 'a' else 'p'
+    minutes = if now.getMinutes() < 10 then '0'+now.getMinutes() else now.getMinutes()
     if title
-      $descr.html title + " | " + now.getHours()%12 + ":" + now.getMinutes() + ampm
+      $descr.html title + " | " + now.getHours()%12 + ":" + minutes + ampm
     else
-      $descr.html now.getHours()%12 + ":" + now.getMinutes() + ampm
+      $descr.html now.getHours()%12 + ":" + minutes + ampm
     $div.append $descr
     $domEl.append $div
   img.src = url
